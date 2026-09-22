@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wesley Drake's HIST 280 Data & History portfolio.">
+  <title>Wesley Drake | HIST 280</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Libre+Baskerville:wght@400;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --charcoal: #202327;
+      --ink: #141618;
+      --steel: #697078;
+      --silver: #b8bec2;
+      --mist: #e2e4e3;
+      --paper: #f1f0ec;
+      --line: 1px solid rgba(20, 22, 24, .28);
+      --serif: "Libre Baskerville", Georgia, serif;
+      --sans: Manrope, Arial, sans-serif;
+      --mono: "DM Mono", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(1180px, calc(100% - 64px)); margin: 0 auto; }
+    .mono { color: var(--steel); font: 500 .7rem var(--mono); letter-spacing: .15em; text-transform: uppercase; }
+
+    header { position: sticky; top: 0; z-index: 10; border-bottom: var(--line); background: rgba(241, 240, 236, .94); backdrop-filter: blur(12px); }
+    nav { display: flex; align-items: center; justify-content: space-between; min-height: 78px; gap: 28px; }
+    .mark { display: flex; align-items: center; gap: 12px; font: 700 .86rem var(--mono); letter-spacing: .04em; }
+    .mark-symbol { display: grid; width: 31px; height: 31px; place-items: center; border: 2px solid var(--ink); border-radius: 50%; color: var(--paper); background: var(--charcoal); font: 700 .78rem var(--serif); }
+    .nav-links { display: flex; align-items: center; gap: 34px; font-size: .78rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .nav-links a { padding: 30px 0 26px; border-bottom: 2px solid transparent; }
+    .nav-links a:hover, .nav-links a.active { border-color: var(--ink); }
+    .status { display: flex; align-items: center; gap: 8px; color: var(--steel); font: 500 .65rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #748b79; }
+
+    .hero { display: grid; min-height: 650px; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 70px; padding: 90px 0 115px; }
+    .hero-kicker { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+    .hero-kicker::before { content: ""; width: 46px; border-top: 1px solid var(--steel); }
+    h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 400; }
+    h1 { max-width: 700px; font-size: clamp(3.5rem, 7.8vw, 7.7rem); letter-spacing: -.075em; line-height: .98; }
+    h1 span { color: var(--steel); }
+    .hero-intro { max-width: 520px; margin: 32px 0 0 4px; color: #4d5358; font-size: 1rem; line-height: 1.8; }
+    .hero-button { display: inline-flex; align-items: center; gap: 15px; margin-top: 34px; padding: 14px 18px; border: 1px solid var(--ink); background: var(--charcoal); color: var(--paper); font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; transition: background .2s, color .2s; }
+    .hero-button:hover { background: var(--paper); color: var(--ink); }
+    .hero-button span { font-size: 1.1rem; }
+    .file-card { position: relative; padding: 28px; border: var(--line); background: var(--mist); box-shadow: 13px 13px 0 var(--silver); transform: rotate(2deg); }
+    .file-card::before { content: "CLASSIFIED / 280"; position: absolute; top: 17px; right: 20px; color: var(--steel); font: .58rem var(--mono); letter-spacing: .12em; }
+    .file-card-top { padding-bottom: 22px; border-bottom: var(--line); }
+    .file-card h2 { margin-top: 60px; font-size: clamp(2rem, 4vw, 3.6rem); letter-spacing: -.06em; }
+    .file-card-id { margin-top: 8px; color: var(--steel); font: .67rem var(--mono); }
+    .file-details { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-top: 24px; }
+    .file-details dt { margin-bottom: 5px; color: var(--steel); font: .6rem var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .file-details dd { margin: 0; font: .8rem var(--sans); }
+
+    .band { border-top: var(--line); border-bottom: var(--line); background: var(--charcoal); color: var(--paper); }
+    .about { display: grid; grid-template-columns: .75fr 1.25fr; gap: 80px; padding: 105px 0; }
+    .about h2, .work h2 { max-width: 400px; margin-top: 18px; font-size: clamp(2.3rem, 4.5vw, 4.4rem); letter-spacing: -.07em; line-height: 1.05; }
+    .about-copy { max-width: 560px; padding-top: 12px; }
+    .about-copy p { margin: 0 0 26px; color: var(--silver); font: 1rem/1.85 var(--serif); }
+    .about-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(241, 240, 236, .3); }
+    .about-list li { padding: 16px 0 16px 23px; border-bottom: 1px solid rgba(241, 240, 236, .3); color: var(--paper); font-size: .95rem; }
+    .about-list li::before { content: "•"; margin-left: -22px; padding-right: 14px; color: var(--silver); }
+
+    .work { padding: 106px 0 125px; }
+    .work-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 55px; }
+    .work-heading p { max-width: 290px; margin: 0; color: var(--steel); font-size: .82rem; line-height: 1.7; }
+    .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); }
+    .work-item { min-height: 260px; padding: 25px 25px 25px 0; border-bottom: 1px solid var(--ink); }
+    .work-item + .work-item { padding-left: 25px; border-left: 1px solid var(--ink); }
+    .work-item h3 { margin: 58px 0 16px; font-size: 1.6rem; letter-spacing: -.045em; }
+    .work-item p { max-width: 245px; margin: 0; color: #596066; font-size: .85rem; line-height: 1.7; }
+    .work-arrow { display: block; margin-top: 30px; font-size: 1.3rem; }
+    footer { padding: 26px 0; background: var(--paper); color: var(--steel); font: .65rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    footer .shell { display: flex; justify-content: space-between; gap: 20px; }
+
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 36px, 560px); }
+      nav { min-height: 68px; } .status { display: none; } .nav-links { gap: 15px; } .nav-links a { padding: 25px 0 22px; font-size: .62rem; }
+      .hero { display: block; min-height: auto; padding: 75px 0 100px; } h1 { font-size: clamp(3.35rem, 16vw, 5.4rem); } .hero-intro { font-size: .9rem; }
+      .file-card { margin: 72px 13px 0 0; } .about { display: block; padding: 75px 0; } .about-copy { padding-top: 45px; }
+      .work { padding: 75px 0; } .work-heading { display: block; margin-bottom: 40px; } .work-heading p { margin-top: 20px; } .work-grid { display: block; } .work-item { min-height: 205px; padding: 25px 0; } .work-item + .work-item { padding-left: 0; border-left: 0; } .work-item h3 { margin-top: 36px; }
+      footer .shell { display: block; } footer a { display: inline-block; margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="shell">
+      <a class="mark" href="#top"><span class="mark-symbol">W</span><span>WESLEY DRAKE / 280</span></a>
+      <div class="nav-links"><a class="active" href="#about">About</a><a href="#work">Work</a></div>
+      <span class="status">Portfolio active</span>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div>
+        <div class="hero-kicker mono">HIST 280 / DATA &amp; HISTORY</div>
+        <h1>A record of <span>the work.</span></h1>
+        <p class="hero-intro">A personal archive for research, projects, and observations from Data &amp; History. Built to keep the evidence clear and the story worth following.</p>
+        <a class="hero-button" href="#work">View my work <span>↓</span></a>
+      </div>
+      <aside class="file-card" aria-label="Course portfolio identification card">
+        <div class="file-card-top"><span class="mono">Personnel file</span><h2>Wesley<br>Drake</h2><div class="file-card-id">REF / HIST-280 / 2030</div></div>
+        <dl class="file-details"><div><dt>Course</dt><dd>Data &amp; History</dd></div><div><dt>Term</dt><dd>Current</dd></div><div><dt>Focus</dt><dd>Evidence</dd></div><div><dt>Status</dt><dd>In progress</dd></div></dl>
+      </aside>
+    </section>
+
+    <section class="band"><div class="shell about" id="about"><div><span class="mono">01 / About</span><h2>The person behind the archive.</h2></div><div class="about-copy"><p>This site holds my work for HIST 280: Data &amp; History. It is a working record of the questions I ask, the sources I examine, and the patterns I find.</p><ul class="about-list"><li>Class of 2030</li><li>Swimmer</li><li>Biochemistry Major</li></ul></div></div></section>
+
+    <section class="work shell" id="work">
+      <div class="work-heading"><div><span class="mono">02 / Work</span><h2>Field notes<br>and findings.</h2></div><p>Selected work from HIST 280 will appear here as the semester develops.</p></div>
+      <div class="work-grid">
+        <article class="work-item"><span class="mono">Project 01</span><h3>Research project</h3><p>A space for a historical question, its data, and the argument that connects them.</p><span class="work-arrow">↗</span></article>
+        <article class="work-item"><span class="mono">Project 02</span><h3>Data visualization</h3><p>A visual investigation of a historical dataset and the story it makes visible.</p><span class="work-arrow">↗</span></article>
+        <article class="work-item"><span class="mono">Project 03</span><h3>Final portfolio</h3><p>A considered collection of the semester's strongest work and conclusions.</p><span class="work-arrow">↗</span></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell"><span>Wesley Drake / HIST 280 / Data &amp; History</span><a href="#top">Return to top ↑</a></div></footer>
+</body>
+</html>
